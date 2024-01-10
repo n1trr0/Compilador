@@ -1,7 +1,5 @@
-package Practica_3.Practica_4.src;
-
-import java.nio.charset.StandardCharsets;
-import java.util.Hashtable;
+package CompiladorPDL.src.src;
+//Raul Garcia & Gonzalo Sepulveda
 import java.io.File;
 import java.nio.charset.Charset;
 import java.io.BufferedReader;
@@ -87,25 +85,17 @@ public class Lexico {
 
             return false;
     }
-    public boolean checkComments(){
-        if(this.caracter=='/'){
-            this.caracter = extraeCaracter();
-            if(this.caracter=='/'){
-                this.caracter = extraeCaracter();
-                while (true) {
-                    if ((int) this.caracter == 13) {
-                        devuelveCaracter();
-                        return true;
-                    }else if ((int) this.caracter == 10){
-                        this.lineas++;
-                        devuelveCaracter();
-                        return  true;
-                    }
-                    this.caracter = extraeCaracter();
-                }
+    public void shortComments(){
+        while (true) {
+            if ((int) this.caracter == 13) {
+                devuelveCaracter();
+                return;
+            }else if ((int) this.caracter == 10){
+                devuelveCaracter();
+                return;
             }
+            this.caracter = extraeCaracter();
         }
-        return false;
     }
     public void removeSpace(){
         while (true) {
@@ -118,19 +108,6 @@ public class Lexico {
                 break;
         }
     }
-
-    public boolean arrayNext(){
-        removeSpace();
-        if(this.caracter == '['){
-            devuelveCaracter();
-            return true;
-        }
-        else{
-            devuelveCaracter();
-            return false;
-        }
-    }
-
     public int getLineas() {
         return this.lineas;
     }

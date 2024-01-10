@@ -1,5 +1,5 @@
-package Practica_3.Practica_4.src;
-
+package CompiladorPDL.src.src;
+//Raul Garcia & Gonzalo Sepulveda
 public class ComponenteLexico{
     private String etiqueta; // etiqueta del token
     private String valor; // valor asociado a un token id o num

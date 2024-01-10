@@ -1,5 +1,5 @@
-package Practica_3.Practica_4.src;
-
+package CompiladorPDL.src.src;
+//Raul Garcia & Gonzalo Sepulveda
 import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;

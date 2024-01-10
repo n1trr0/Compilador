@@ -15,8 +15,8 @@ multiply    *
 divide  /
 remainder   %
 // Operadores lógicos
-and     &&
-or  ||
+and     and
+or  or
 not     !
 // Delimitadores
 dot     .
@@ -29,6 +29,9 @@ closed_square_bracket   ]
 open_bracket    {
 closed_bracket  }
 end_program     #
+comment    //
+comments    /*
+comments_   */
 
 // Palabras reservadas
 boolean     boolean
@@ -45,3 +48,4 @@ true    true
 void    void
 main    main
 print   print
+int int

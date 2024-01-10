@@ -1,5 +1,5 @@
-package Practica_3.Practica_4.src;
-
+package CompiladorPDL.src.src;
+//Raul Garcia & Gonzalo Sepulveda
 public class TestAnalizadorSintactico {
 
     public static void main (String[] args) {
@@ -7,21 +7,31 @@ public class TestAnalizadorSintactico {
         boolean mostrarComponentesLexicos = true; //poner a false y no se quieren mostrar los tokens <id, a> ...
 
         String expresion = "void main {\n" +
-                " int [10] f;\n" +
-                " // sucesión de Fibonacci\n" +
-                " f[0] = 0;\n" +
-                " f[1] = 1;\n" +
-                " int i = 2;\n" +
-                " while (i < 10) {\n" +
-                " f[i] = f[i-1] + f[i-2];\n" +
+                " int a = 1, b = 2, c = (25 * (2 + a)) / (2 * b), d = a + 2*b + c;\n" +
+                " if (d >= 10 and d <= 20 or d < 5) {\n" +
+                " c = d - 5;\n" +
+                " } else {\n" +
+                " c = d + 5;\n" +
+                " }\n" +
+                " int i = 0;\n" +
+                " while (i <=10 and c >= 0) {\n" +
+                " c = c - 1;\n" +
                 " i = i + 1;\n" +
                 " }\n" +
-                " i = 0;\n" +
-                " while (i < 10) {\n" +
-                " print(f[i]);\n" +
-                " i = i + 1;\n" +
+                " if (a <= 10)\n" +
+                " c = 1;\n" +
+                " else {\n" +
+                " c = 2;\n" +
+                " do {\n" +
+                " c = c + 2;\n" +
+                " a = a - 1;\n" +
+                " } while (a >= 0);\n" +
                 " }\n" +
-                "}";
+                " print(a);\n" +
+                " print(b);\n" +
+                " print(c);\n" +
+                " print(d);\n" +
+                "}\n";
 
         ComponenteLexico etiquetaLexica;
         Lexico lexico = new Lexico(expresion);
@@ -44,7 +54,7 @@ public class TestAnalizadorSintactico {
 
         compilador.analisisSintactico();
 
-        System.out.println("Tabla de símbolos \n\n" );
+        System.out.println("Tabla de símbolos: " );
         String simbolos = compilador.tablaSimbolos();
         System.out.println(simbolos);
 
